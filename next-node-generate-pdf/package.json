@@ -1,0 +1,19 @@
+{
+  "name": "next-generate-pdf",
+  "author": "Chisom Oguibe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.5",
+    "handlebars": "^4.7.6",
+    "next": "^12.3.0",
+    "puppeteer": "^5.5.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}

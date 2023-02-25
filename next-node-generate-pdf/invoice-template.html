@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            margin-top: 5rem;
+        }
+
+        .invoice-box {
+            width: 600px;
+            max-width: 800px;
+            margin: auto;
+            padding: 10px;
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
+        }
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
+        }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        /** RTL **/
+        .rtl {
+            direction: rtl;
+            font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .rtl table {
+            text-align: right;
+        }
+
+        .rtl table tr td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td class="title">
+                            <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M35 0H0V35H35V0Z" fill="#3646F5"/>
+                                <path d="M9.60547 8.5752H13.4831L17.2547 21.7639L21.0615 8.5752H24.8331L18.9047 25.9479H15.4749L9.60547 8.5752Z" fill="white"/>
+                            </svg>
+                        </td>
+
+                        <td>
+                            Invoice #: {{invoiceId}}<br/>
+                            Created: {{createdAt}}<br/>
+                            Due: {{dueOn}}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr class="information">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td>
+                            <strong>Voyage</strong><br/>
+                            +447445 976637<br/>
+                            hello@usevoyage.com
+                        </td>
+
+                        <td>
+                            <strong>Bill To</strong><br/>
+                            {{company}}<br/>
+                            {{customerName}}<br/>
+                            {{email}}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr class="heading">
+            <td>
+                Item
+            </td>
+
+            <td>
+                Price
+            </td>
+        </tr>
+
+        <tr class="item">
+            <td>
+                {{tripId}}
+            </td>
+
+            <td>
+                £{{tripTotal}}
+            </td>
+        </tr>
+
+        <tr class="item last">
+            <td>
+                VAT (20%)
+            </td>
+
+            <td>
+                £{{vat}}
+            </td>
+        </tr>
+
+        <tr class="total">
+            <td></td>
+
+            <td>
+                Total: £{{totalDue}}
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>
