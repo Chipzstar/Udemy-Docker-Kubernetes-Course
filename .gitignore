@@ -1,0 +1,5 @@
+.fleet/
+.idea/
+node_modules/
+Scripts/
+site-packages/
