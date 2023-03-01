@@ -3,3 +3,4 @@
 node_modules/
 Scripts/
 site-packages/
+*.pack
