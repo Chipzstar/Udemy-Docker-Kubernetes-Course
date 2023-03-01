@@ -13,11 +13,13 @@ app.use(express.static('public'));
 app.use('/feedback', express.static('feedback'));
 
 app.get('/', (req, res) => {
+  console.log("Displaying Feedback page")
   const filePath = path.join(__dirname, 'pages', 'feedback.html');
   res.sendFile(filePath);
 });
 
 app.get('/exists', (req, res) => {
+  console.log("Diplaying exists page")
   const filePath = path.join(__dirname, 'pages', 'exists.html');
   res.sendFile(filePath);
 });
@@ -44,4 +46,6 @@ app.post('/create', async (req, res) => {
   });
 });
 
+console.log("Listening on port 80...")
+console.log("Hello World!!")
 app.listen(80);
