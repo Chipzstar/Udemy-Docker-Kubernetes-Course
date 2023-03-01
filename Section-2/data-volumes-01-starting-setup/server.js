@@ -41,6 +41,7 @@ app.post('/create', async (req, res) => {
       // await fs.rename(tempFilePath, finalFilePath);
       await fs.copyFile(tempFilePath, finalFilePath);
       await fs.unlink(tempFilePath);
+      console.log("New Feedback created");
       res.redirect('/');
     }
   });
