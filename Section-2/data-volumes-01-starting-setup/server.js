@@ -47,6 +47,6 @@ app.post('/create', async (req, res) => {
   });
 });
 
-console.log("Listening on port 80...")
+console.log(`Listening on port ${process.env.PORT}`);
 console.log("Hello World!!")
-app.listen(80);
+app.listen(process.env.PORT || 80);
