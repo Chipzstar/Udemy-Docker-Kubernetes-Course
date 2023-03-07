@@ -1,0 +1,5 @@
+Mongo: docker run --rm -d --name mongodb -v data:/data/db -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin --network udemy mongo
+
+Backend: docker run --rm --name backend -p 80:80 --network udemy -v "C:\Users\chiso\Projects\UDEMY - Docker & Kubernetes The Practical Guide\Section-4\multi-01-starting-setup\backend:/app" -v logs:/app/logs multi-app:backend
+
+Frontend:  docker run --rm --name backend -p 80:80 --network udemy -v "C:\Users\chiso\Projects\UDEMY - Docker & Kubernetes The Practical Guide\Section-4\multi-01-starting-setup\backend:/app" multi-app:backend

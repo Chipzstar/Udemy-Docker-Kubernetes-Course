@@ -1,0 +1,1 @@
+ docker run --rm --name backend -p 80:80 --network udemy -v "C:\Users\chiso\Projects\UDEMY - Docker & Kubernetes The Practical Guide\Section-4\multi-01-starting-setup\backend:/app" multi-app:backend

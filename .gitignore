@@ -4,3 +4,5 @@ node_modules/
 Scripts/
 site-packages/
 *.pack
+package-lock.json
+__MACOSX/
